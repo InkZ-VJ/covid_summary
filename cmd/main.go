@@ -6,12 +6,14 @@ import (
 
 	"covid/config"
 	"covid/internal/adapters/covidadt"
+	"covid/internal/core/service/covidsvc"
 )
 
 func main() {
 	config.Init()
 	ctx := context.Background()
 	ca := covidadt.New()
-	out, err := ca.GetCovidStat(ctx)
+	csvc := covidsvc.New(ca)
+	out, err := csvc.GetSummary(ctx)
 	fmt.Println(out, err)
 }

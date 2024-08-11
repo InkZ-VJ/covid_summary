@@ -20,7 +20,7 @@ func New() ports.CovidAdapter {
 	}
 }
 
-func (a *adapter) GetCovidStat(ctx context.Context) (*dtos.CovidResponse, error) {
+func (a *adapter) GetCovidRecords(ctx context.Context) (*dtos.CovidResponse, error) {
 	var out dtos.CovidResponse
 	_, err := a.rc.R().
 		SetResult(&out).

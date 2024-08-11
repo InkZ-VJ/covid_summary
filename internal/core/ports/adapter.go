@@ -7,5 +7,5 @@ import (
 )
 
 type CovidAdapter interface {
-	GetCovidStat(ctx context.Context) (*dtos.CovidResponse, error)
+	GetCovidRecords(ctx context.Context) (*dtos.CovidResponse, error)
 }
