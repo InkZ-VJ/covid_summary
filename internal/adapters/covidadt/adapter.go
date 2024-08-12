@@ -24,6 +24,7 @@ func (a *adapter) GetCovidRecords(ctx context.Context) (*dtos.CovidResponse, err
 	var out dtos.CovidResponse
 	_, err := a.rc.R().
 		SetResult(&out).
+		SetContext(ctx).
 		Get(config.Get().External.Covid)
 	if err != nil {
 		return nil, err

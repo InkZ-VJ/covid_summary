@@ -1,3 +1,5 @@
 package ports
 
-type covidHandler interface{}
+type CovidHandler interface {
+	Start() error
+}

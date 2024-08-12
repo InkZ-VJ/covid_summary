@@ -19,7 +19,8 @@ type mongo struct {
 }
 
 type server struct {
-	Port int `envconfig:"PORT" default:"8080"`
+	Host string `envconfig:"HOST" default:"0.0.0.0"`
+	Port int    `envconfig:"PORT" default:"8080"`
 }
 
 type external struct {

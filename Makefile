@@ -1,4 +1,5 @@
 GO := GO111MODULE=on go
+BROWSER := firefox
 
 .PHONY: ci
 ci:
@@ -24,6 +25,8 @@ clean:
 
 test:
 	go test -cover ./... -coverprofile=cover.out -covermode count && go tool cover -html cover.out -o cover.html
+cover: test
+	$(BROWSER) $(shell pwd)/cover.html
 
 run:
 	go run ./cmd/main.go
